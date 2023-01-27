@@ -1,0 +1,25 @@
+{
+  "name": "interacting-with-a-smart-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://AdrianGeorgeM@github.com/AdrianGeorgeM/Interacting-With-a-Smart-Contract.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdrianGeorgeM/Interacting-With-a-Smart-Contract/issues"
+  },
+  "homepage": "https://github.com/AdrianGeorgeM/Interacting-With-a-Smart-Contract#readme",
+  "dependencies": {
+    "alchemy-sdk": "^2.4.0",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2"
+  }
+}
