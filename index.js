@@ -39,17 +39,29 @@ const provider = new ethers.providers.AlchemyProvider(
 	"goerli",
 	process.env.TEST_API_KEY
 );
+// new ethers.Wallet(privateKey,[ ,provider]);
+const wallet = new ethers.Wallet(process.env.TEST_PRIVATE_KEY, provider);
 
 async function main() {
 	// new ethers.Contract(address, abi, signerOrProvider);
 	const counterContract = new ethers.Contract(
 		"0x5F91eCd82b662D645b15Fd7D2e20E5e5701CCB7A",
 		contractABI,
-		provider
+		wallet
 	);
 
-	const currentCounterValue = await counterContract.count();
-	console.log("Current Counter Value: ", currentCounterValue);
+	// check on etherscan for the contract address Transactions
+	// https://goerli.etherscan.io/address/0x5F91eCd82b662D645b15Fd7D2e20E5e5701CCB7A
+	//Call the increment and decrement functions to prove that my scripts is working correctly
+	// by checking the last Method ID on the contract address Transactions
+
+	const decrementCounterValue = await counterContract.dec();
+	const incrementCounterValue = await counterContract.inc();
+	let currentCount = await counterContract.get();
+
+	console.log("Current Counter Value: ", currentCount.toString());
+	console.log("decrementCounterValue: ", decrementCounterValu.hash);
+	console.log("incrementCounterValue: ", incrementCounterValue.hash);
 }
 
 main();
