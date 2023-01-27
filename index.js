@@ -37,7 +37,7 @@ const contractABI = [
 // https://goerli.etherscan.io/address/0x5F91eCd82b662D645b15Fd7D2e20E5e5701CCB7A#code
 const provider = new ethers.providers.AlchemyProvider(
 	"goerli",
-	"Guj4CEQmHkJqmhxlPDH-59dK4bTb3GyL"
+	process.env.TEST_API_KEY
 );
 
 async function main() {
